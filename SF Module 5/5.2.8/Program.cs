@@ -22,7 +22,7 @@ internal class Program
         }
 
         WriteLine("Ваши любимые цвета:");
-        foreach(var color in User.FavoriteColors)
+        foreach (var color in User.FavoriteColors)
         {
             WriteLine(color);
         }
@@ -70,7 +70,7 @@ internal class Program
     static string GetDataFromConsole() => Console.ReadLine();
     static string ShowColor(string name, int age)
     {
-        Console.WriteLine("{0},{1} \nНапишите свой любимый цвет на английском с маленькой буквы",name,age);
+        Console.WriteLine("{0},{1} \nНапишите свой любимый цвет на английском с маленькой буквы", name, age);
         var color = GetDataFromConsole();
 
         switch (color)
@@ -105,4 +105,19 @@ internal class Program
         return color;
     }
 
+    static void SortComplexArray(int[,] arr)
+    {
+        int temp;
+        for (int i = 0; i <= arr.GetUpperBound(0); i++)
+        {
+            for (int j = 0; j <= arr.GetUpperBound(1); j++)
+                for (int k = j + 1; k <= arr.GetUpperBound(1); k++)
+                    if (arr[i, j] > arr[i, k])
+                    {
+                        temp = arr[i, k];
+                        arr[i, k] = arr[i, j];
+                        arr[i, j] = temp;
+                    }
+        }
+    }
 }
