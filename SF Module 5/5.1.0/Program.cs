@@ -1,4 +1,4 @@
-﻿
+﻿using static System.Console;
 
 internal class Program
 {
@@ -44,20 +44,37 @@ internal class Program
     public static void Main(string[] args)
     {
 
-        var (name, age) = ("Евгения", 27);
+         
+        (string name, int age) User;
 
-        Console.WriteLine("Мое имя: {0}", name);
-        Console.WriteLine("Мой возраст: {0}", age);
+
+        //Console.WriteLine("Мое имя: {0}", name);
+        //Console.WriteLine("Мой возраст: {0}", age);
 
         Console.Write("Введите имя: ");
-        name = Console.ReadLine();
+        User.name = Console.ReadLine();
         Console.Write("Введите возраст с цифрами:");
-        age = Convert.ToInt32(Console.ReadLine());
+        User.age = Convert.ToInt32(Console.ReadLine());
 
-        Console.WriteLine("Ваше имя: {0}", name);
-        Console.WriteLine("Ваш возраст: {0}", age);
+        Console.WriteLine("Ваше имя: {0}", User.name);
+        Console.WriteLine("Ваш возраст: {0}", User.age);
 
-        ShowColor();
+        string[] favoriteColors = new string[3];
+
+
+        for (int i = 0; i < favoriteColors.Length; i++)
+        {
+            favoriteColors[i] = ShowColor();
+        }
+
+        foreach (string color in favoriteColors)
+        {
+            WriteLine(color);
+        }
+
+
+
+
 
 
     }
