@@ -29,9 +29,10 @@ internal class Program
 
 
         var arr = GetArrayFromConsole();
+        var sortedarray=CustomSort(arr);
 
         Console.Write("Сортированный массив:");
-        foreach (var item in arr)
+        foreach (var item in sortedarray)
         {
             Console.Write(item);
         }
@@ -67,7 +68,7 @@ internal class Program
         }
 
         //        Array.Sort(result);
-        result = CustomSort(result);
+        //        result = CustomSort(result);
 
         return result;
     }
