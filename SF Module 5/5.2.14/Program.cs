@@ -27,16 +27,18 @@ internal class Program
         //    WriteLine(color);
         //}
 
+        int tmp= Convert.ToInt32(args[0]);
+        var arr = GetArrayFromConsole(tmp);
+        //var sortedarray = CustomSort(arr);
 
-        var arr = GetArrayFromConsole();
-        var sortedarray=CustomSort(arr);
+        //Console.Write("Сортированный массив:");
+        //foreach (var item in sortedarray)
+        //{
+        //    Console.Write(item);
+        //}
+        //Console.WriteLine();
 
-        Console.Write("Сортированный массив:");
-        foreach (var item in sortedarray)
-        {
-            Console.Write(item);
-        }
-        Console.WriteLine();
+        ShowArray(arr, true);
 
 
     }
@@ -148,5 +150,25 @@ internal class Program
                         arr[i, j] = temp;
                     }
         }
+    }
+
+    static void ShowArray(int[] arr, bool needsort = false)
+    {
+        int[] tempArr = new int[arr.Length];
+
+        Array.Copy(arr, tempArr, arr.Length);
+
+        if (needsort)
+        {
+            tempArr = CustomSort(tempArr);
+        }
+
+        Write("Сортированный массив методом ShowArray:");
+        foreach(var a in tempArr)
+        {
+            Write(" " + a + " ");
+        }
+        WriteLine();
+
     }
 }
