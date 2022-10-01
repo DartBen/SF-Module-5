@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "5.5.3": {
+      "commandName": "Project",
+      "commandLineArgs": "пиздец грянул"
+    }
+  }
+}
