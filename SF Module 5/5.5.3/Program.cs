@@ -215,6 +215,9 @@ internal class Program
         {
             modif = modif.Remove(0, 2);
         }
+        ConsoleColor color = (ConsoleColor)deep;
+
+        Console.BackgroundColor = color;
         Console.WriteLine("..." + modif);
 
         if (deep > 1)
@@ -222,6 +225,7 @@ internal class Program
             Echo(modif, deep - 1);
         }
     }
+
 
 
 }
